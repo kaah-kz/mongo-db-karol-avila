@@ -20,7 +20,7 @@ use(database);
 db["libri-collection"].find({"categoria":"Ficção Científica"});
 
 
-const database = 'libri-database';
+// const database = 'libri-database';
 use(database);
 
 db["libri-collection"].find({"categoria":"Ficção Científica"}, {"_id":0, "codigo":0});
@@ -28,3 +28,7 @@ db["libri-collection"].find({"categoria":"Ficção Científica"}, {"_id":0, "cod
 // ---------------------------------------------------------------------------------------------------------------
 
 // SELECIONA DADOS BASEADOS EM CRITÉRIOS DE BUSCA POR UMA PARTE DE STRING DE UM CAMPO
+const database = 'libri-database';
+use(database);
+db['libri-collection'].find({"titulo":/robôs/i},
+{"_id":0, "codigo":0, "imagem":0})
